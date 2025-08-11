@@ -33,7 +33,7 @@ Task:
   * Usage
   * What they do
 - Preserve important content already in the README.
-- Output ONLY valid markdown for the new README.md.
+- Output ONLY valid markdown. Do NOT wrap the entire README in triple backticks.
 """
 
 response = model.generate_content(prompt)
