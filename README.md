@@ -1,4 +1,3 @@
-```markdown
 # Development Utility Scripts
 
 A collection of bash scripts designed to streamline common development tasks and enhance your workflow. These scripts provide simple, efficient solutions for managing virtual environments, simplifying Git operations, and more.
@@ -6,19 +5,15 @@ A collection of bash scripts designed to streamline common development tasks and
 ## Scripts
 
 ### `stenv` - Python Virtual Environment Manager
+Provides convenient functions for managing Python virtual environments in your projects.
 
-`stenv` simplifies the management of Python virtual environments. It automatically detects existing environments and offers to create new ones if needed. It enhances the user experience with clear feedback and emoji indicators.
-
-### `gitpu.sh` - Streamlined Git Commit & Push
-
-`gitpu.sh` streamlines the Git workflow by combining the `add`, `commit`, and `push` commands into a single, easy-to-use command, significantly reducing the time spent on routine tasks, without requiring you to open a text editor for commit messages.
+### `gitpu.sh` - Streamlined Git Commit & Push  
+Simplifies the git workflow by combining add, commit, and push into a single command with optional messaging (no vim required).
 
 ## Usage
 
 ### Python Virtual Environment (`stenv`)
-
 **Direct execution:**
-
 ```bash
 source stenv
 start_env
@@ -39,10 +34,7 @@ After updating your shell configuration, reload your shell (e.g., `source ~/.bas
 stenv
 ```
 
-This will activate the `start_env` function whenever you type `stenv` in your terminal.
-
 ### Git Commit & Push (`gitpu.sh`)
-
 **Add as bash alias:**
 
 For quick and easy access to the `gitpu.sh` script, add the following alias to your `~/.bashrc` or `~/.zshrc`:
@@ -51,10 +43,9 @@ For quick and easy access to the `gitpu.sh` script, add the following alias to y
 alias push='/path/to/gitpu.sh'
 ```
 
-Then, after reloading your shell, you can use the script with:
-
+Then use:
 ```bash
-push "Your commit message here"
+push
 ```
 
 If you omit the commit message, it will prompt you for one, providing an interactive commit message experience.
@@ -66,9 +57,8 @@ If you omit the commit message, it will prompt you for one, providing an interac
 1.  **Virtual Environment Detection:** Automatically checks the current directory for existing virtual environments (`.venv` or `venv`).
 2.  **Automatic Activation:** Activates any found virtual environments automatically, getting you straight to work.
 3.  **Environment Creation:** If no virtual environment is found, it offers to create a new `.venv` environment, streamlining project setup.
-4.  **User Experience:** Provides clear feedback with emojis for better user interaction, making the process more engaging.
-5.  **Input Validation:** Handles user input validation during environment creation prompts, preventing common errors.
-6.  **Customizable:** Offers options for different virtual environment tools (e.g., `venv`, `virtualenv`, `conda`).  *(This feature may require updates to the script itself)*. Future versions will automatically detect the project's requirements and suggest the appropriate environment.
+4.  **Input Validation:** Handles user input validation during environment creation prompts, preventing common errors.
+5.  **Customizable:** Offers options for different virtual environment tools (e.g., `venv`, `virtualenv`, `conda`).  *(This feature may require updates to the script itself)*. Future versions will automatically detect the project's requirements and suggest the appropriate environment.
 
 ### `gitpu.sh`
 
@@ -98,4 +88,4 @@ Contributions are welcome! If you have ideas for new scripts or improvements to 
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Perfect for developers who work across multiple projects and want simplified command-line workflows, saving time and reducing repetitive tasks, leading to a more enjoyable and productive development experience.
+Perfect for developers who work across multiple projects and want simplified command-line workflows.

@@ -27,13 +27,12 @@ Repository context (partial files):
 {context}
 
 Task:
-- Improve, expand, and modernize the README while keeping its current style and relevant details.
+- Update README while keeping its current style and relevant details.
 - Include:
   * Scripts
   * Usage
   * What they do
 - Preserve important content already in the README.
-- Output ONLY valid markdown. Do NOT wrap the entire README in triple backticks.
 """
 
 response = model.generate_content(prompt)
