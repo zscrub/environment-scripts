@@ -82,10 +82,4 @@ We welcome contributions and suggestions for expanding the functionality of thes
 
 ## Contributing
 
-Contributions are welcome! If you have ideas for new scripts or improvements to existing ones, please submit a pull request. Be sure to follow our contributing guidelines (coming soon!).
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-Perfect for developers who work across multiple projects and want simplified command-line workflows.
+Contributions are welcome! If you have ideas for new scripts or improvements to existing ones, please submit a pull request.
