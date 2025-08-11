@@ -1,4 +1,3 @@
-```markdown
 # Development Utility Scripts
 
 A collection of bash scripts designed to streamline common development tasks and enhance your workflow. These scripts provide simple, efficient solutions for managing virtual environments, simplifying Git operations, and more.
@@ -90,4 +89,3 @@ Contributions are welcome! If you have ideas for new scripts or improvements to 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 Perfect for developers who work across multiple projects and want simplified command-line workflows.
-```
