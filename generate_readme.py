@@ -18,21 +18,19 @@ for ext in [".py", ".js", ".ts", ".go", ".java", ".md"]:
 context = "\n".join(context_files[:5])  # limit number of files sent
 
 prompt = f"""
-You are updating a GitHub repository README.
+Task:
+- Update README contents while keeping its current style and relevant details. Do not wrap contents in triple backticks.
+- Include:
+  * Scripts
+  * Usage
+  * What they do
+- Preserve important content already in the README.
 
 Current README:
 {current_readme}
 
 Repository context (partial files):
 {context}
-
-Task:
-- Update README while keeping its current style and relevant details.
-- Include:
-  * Scripts
-  * Usage
-  * What they do
-- Preserve important content already in the README.
 """
 
 response = model.generate_content(prompt)
