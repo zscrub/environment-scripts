@@ -3,7 +3,7 @@ import google.generativeai as genai
 from pathlib import Path
 
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-model = genai.GenerativeModel("gemini-1.5-pro")
+model = genai.GenerativeModel("gemini-2.0-flash")
 
 # Read the current README (if exists)
 readme_path = Path("README.md")
