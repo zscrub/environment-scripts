@@ -7,7 +7,7 @@ A collection of bash scripts designed to streamline common development tasks and
 ### `stenv` - Python Virtual Environment Manager
 Provides convenient functions for managing Python virtual environments in your projects.
 
-### `gitpu.sh` - Streamlined Git Commit & Push  
+### `gitpu.sh` - Streamlined Git Commit & Push
 Simplifies the git workflow by combining add, commit, and push into a single command with optional messaging (no vim required).
 
 ## Usage
@@ -58,7 +58,7 @@ If you omit the commit message, it will prompt you for one, providing an interac
 2.  **Automatic Activation:** Activates any found virtual environments automatically, getting you straight to work.
 3.  **Environment Creation:** If no virtual environment is found, it offers to create a new `.venv` environment, streamlining project setup.
 4.  **Input Validation:** Handles user input validation during environment creation prompts, preventing common errors.
-5.  **Customizable:** Offers options for different virtual environment tools (e.g., `venv`, `virtualenv`, `conda`).  *(This feature may require updates to the script itself)*. Future versions will automatically detect the project's requirements and suggest the appropriate environment.
+5.  **Customizable:** Offers options for different virtual environment tools (e.g., `venv`, `virtualenv`, `conda`). *(This feature may require updates to the script itself)*. Future versions will automatically detect the project's requirements and suggest the appropriate environment.
 
 ### `gitpu.sh`
 
