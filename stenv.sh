@@ -1,4 +1,4 @@
-get_python_cmd() {
+et_python_cmd() {
   if command -v uv &>/dev/null; then
     echo uv
   elif command -v python3 &>/dev/null; then
@@ -28,6 +28,20 @@ start_env() {
         uv venv .venv
         source .venv/bin/activate
         echo "🐍 Successfully started virtual environment with uv!"
+# 🔍 Check for dependency files
+      if [ -f "uv.lock" ]; then
+        echo "📦 Installing dependencies from uv.lock with uv sync..."
+        uv sync --quiet
+        echo "✅ Dependencies synced with uv successfully!"
+      elif [ -f "pyproject.toml" ]; then
+        echo "📦 Installing dependencies from pyproject.toml..."
+        uv pip install -e .
+        echo "✅ Dependencies synced with uv successfully!"
+      elif [ -f "requirements.txt" ]; then
+        echo "📦 Installing dependencies from requirements.txt..."
+        uv pip install -r requirements.txt
+        echo "✅ Dependencies installed successfully!"
+      fi
       else
         echo "📁 Creating .venv folder..."
         PYTHON_CMD=$(get_python_cmd)
@@ -35,6 +49,16 @@ start_env() {
         source .venv/bin/activate
         "$PYTHON_CMD" -m ensurepip --upgrade
         echo "🐍 Successfully started virtual environment!"
+# 🔍 Check for dependency files
+        if [ -f "requirements.txt" ]; then
+          echo "📦 Installing dependencies from requirements.txt..."
+          pip install -r requirements.txt
+          echo "✅ Dependencies installed successfully!"
+        elif [ -f "pyproject.toml" ]; then
+          echo "📦 Installing dependencies from pyproject.toml..."
+          pip install -e .
+          echo "✅ Dependencies installed successfully!"
+        fi
       fi
     elif [[ "$create_venv_option" =~ ^[Nn]$ ]]; then
       echo "🛑 Opted out of virtual environment creation."
