@@ -33,6 +33,7 @@ start_env() {
         PYTHON_CMD=$(get_python_cmd)
         "$PYTHON_CMD" -m venv .venv
         source .venv/bin/activate
+	"$PYTHON_CMD" -m ensurepip --upgrade
         echo "🐍 Successfully started virtual environment!"
       fi
     elif [[ "$create_venv_option" =~ ^[Nn]$ ]]; then
