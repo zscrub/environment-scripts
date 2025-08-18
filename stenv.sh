@@ -27,13 +27,13 @@ start_env() {
         echo "📁 Creating .venv using uv..."
         uv venv .venv
         source .venv/bin/activate
-        echo "🐍 Successfully started uv virtual environment!"
+        echo "🐍 Successfully started virtual environment with uv!"
       else
         echo "📁 Creating .venv folder..."
         PYTHON_CMD=$(get_python_cmd)
         "$PYTHON_CMD" -m venv .venv
         source .venv/bin/activate
-	"$PYTHON_CMD" -m ensurepip --upgrade
+        "$PYTHON_CMD" -m ensurepip --upgrade
         echo "🐍 Successfully started virtual environment!"
       fi
     elif [[ "$create_venv_option" =~ ^[Nn]$ ]]; then
