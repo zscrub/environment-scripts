@@ -15,17 +15,17 @@ Simplifies the git workflow by combining add, commit, and push into a single com
 ### Python Virtual Environment (`stenv`)
 **Direct execution:**
 ```bash
-source stenv
+source stenv.sh
 start_env
 ```
+This directly sources the script and executes the `start_env` function.
 
 **Recommended: Add as bash alias**
 
 To make `stenv` even easier to use, add the following lines to your `~/.bashrc` or `~/.zshrc` (or the appropriate configuration file for your shell):
 
 ```bash
-source /path/to/stenv
-alias stenv='start_env'
+alias stenv='source /path/to/stenv.sh && start_env'
 ```
 
 After updating your shell configuration, reload your shell (e.g., `source ~/.bashrc` or `source ~/.zshrc`) and use:
@@ -33,6 +33,8 @@ After updating your shell configuration, reload your shell (e.g., `source ~/.bas
 ```bash
 stenv
 ```
+
+This executes the `start_env` function defined in `stenv.sh`. This command simplifies the process of creating and activating Python virtual environments.
 
 ### Git Commit & Push (`gitpu.sh`)
 **Add as bash alias:**
@@ -45,6 +47,10 @@ alias push='/path/to/gitpu.sh'
 
 Then use:
 ```bash
+push "your commit message"
+```
+or simply:
+```bash
 push
 ```
 
@@ -56,9 +62,10 @@ If you omit the commit message, it will prompt you for one, providing an interac
 
 1.  **Virtual Environment Detection:** Automatically checks the current directory for existing virtual environments (`.venv` or `venv`).
 2.  **Automatic Activation:** Activates any found virtual environments automatically, getting you straight to work.
-3.  **Environment Creation:** If no virtual environment is found, it offers to create a new `.venv` environment, streamlining project setup.
+3.  **Environment Creation:** If no virtual environment is found, it offers to create a new `.venv` environment, streamlining project setup. It defaults to using `venv`, but if `uv` is installed, it will use `uv` for faster environment creation and dependency management.
 4.  **Input Validation:** Handles user input validation during environment creation prompts, preventing common errors.
-5.  **Customizable:** Offers options for different virtual environment tools (e.g., `venv`, `virtualenv`, `conda`). *(This feature may require updates to the script itself)*. Future versions will automatically detect the project's requirements and suggest the appropriate environment.
+5.  **Dependency Installation:** After creating the virtual environment, the script checks for `requirements.txt` or `pyproject.toml` and offers to install dependencies using `pip` (or `uv` if the environment was created with `uv`).
+6.  **Customizable:** Offers options for different virtual environment tools (e.g., `venv`, `virtualenv`, `conda`). *(This feature may require updates to the script itself)*. Future versions will automatically detect the project's requirements and suggest the appropriate environment.
 
 ### `gitpu.sh`
 
