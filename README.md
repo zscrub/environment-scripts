@@ -4,7 +4,7 @@ A collection of bash scripts designed to streamline common development tasks and
 
 ## Scripts
 
-### `stenv` - Python Virtual Environment Manager
+### `stenv.sh` - Python Virtual Environment Manager
 Provides convenient functions for managing Python virtual environments in your projects.
 
 ### `gitpu.sh` - Streamlined Git Commit & Push
@@ -12,7 +12,7 @@ Simplifies the git workflow by combining add, commit, and push into a single com
 
 ## Usage
 
-### Python Virtual Environment (`stenv`)
+### Python Virtual Environment (`stenv.sh`)
 **Direct execution:**
 ```bash
 source stenv.sh
@@ -22,7 +22,7 @@ This directly sources the script and executes the `start_env` function.
 
 **Recommended: Add as bash alias**
 
-To make `stenv` even easier to use, add the following lines to your `~/.bashrc` or `~/.zshrc` (or the appropriate configuration file for your shell):
+To make `stenv.sh` even easier to use, add the following lines to your `~/.bashrc` or `~/.zshrc` (or the appropriate configuration file for your shell):
 
 ```bash
 alias stenv='source /path/to/stenv.sh && start_env'
@@ -58,7 +58,7 @@ If you omit the commit message, it will prompt you for one, providing an interac
 
 ## What they do
 
-### `stenv`
+### `stenv.sh`
 
 1.  **Virtual Environment Detection:** Automatically checks the current directory for existing virtual environments (`.venv` or `venv`).
 2.  **Automatic Activation:** Activates any found virtual environments automatically, getting you straight to work.
@@ -73,13 +73,13 @@ If you omit the commit message, it will prompt you for one, providing an interac
 2.  **Simplified Commit Messages:** Allows you to specify a commit message directly in the command, avoiding the need to open a text editor. If no message is provided, it will prompt you for one.
 3.  **Quick Commits:** Perfect for making quick commits during development, encouraging frequent saves.
 4.  **Branch Handling:** Automatically pushes to the current branch. *(Consider adding functionality to specify a branch in a future version)*
-5.  **Error Handling:** Includes basic error handling to catch common issues during the Git process. (Future updates will feature more robust error reporting and handling).
+5.  **Error Handling:** Includes basic error handling to catch common issues during the Git process. (Future updates will feature more robust error reporting and handling). The script first checks if the working tree is clean, and only proceeds if there are changes to commit.
 
 ## Extending Functionality
 
 We welcome contributions and suggestions for expanding the functionality of these scripts. Here are some ideas:
 
-*   **`stenv`**:
+*   **`stenv.sh`**:
     *   Automatically install project dependencies based on `requirements.txt` or `pyproject.toml`.
     *   Add support for other virtual environment managers like `pipenv` and `poetry`.
 *   **`gitpu.sh`**:
