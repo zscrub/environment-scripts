@@ -18,6 +18,12 @@ commit_and_push() {
 
 
 gitpush() {
+  STS=$(git status)
+
+  if echo "$STS" | grep "working tree clean"; then
+    return
+  fi
+
   if [ -n "$1"]; then
     echo "commit message: "
     read MSG
